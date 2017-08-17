@@ -41,6 +41,9 @@ class Pony(Generator):
 
         sections.append("ponyc.append('--path=' + ';'.join(paths) + '')")
 
+        sections.append("ponyc.append('-o')")
+        sections.append("ponyc.append('bin')")
+
         sections.append("from subprocess import call")
         sections.append("call(ponyc)")
 
@@ -49,7 +52,7 @@ class Pony(Generator):
 
 class MyCustomGeneratorPackage(ConanFile):
     name = "PonyGen"
-    version = "0.1"
+    version = "0.2"
     url = "https://github.com/hardliner66/conan-pony"
     license = "MIT"
 
